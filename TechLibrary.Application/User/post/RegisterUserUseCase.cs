@@ -1,6 +1,7 @@
 ﻿using TechLibrary.Application.User.post.Validators;
 using TechLibrary.Comunication.Requests;
 using TechLibrary.Comunication.Response;
+using TechLibrary.Exception;
 
 namespace TechLibrary.Application.User.post
 {
@@ -8,6 +9,8 @@ namespace TechLibrary.Application.User.post
     {
         public UserRegisterResponseJson execute(UserRequestJson requestJson)
         {
+            Validate(requestJson);
+
             return new UserRegisterResponseJson
             {
                 AccessToken = "",
@@ -24,7 +27,7 @@ namespace TechLibrary.Application.User.post
             var response = validator.Validate(request);
             if (!response.IsValid) {
                 var errorMessages = response.Errors.Select(error => error.ErrorMessage).ToList();
-                throw new Exception();
+                throw new ErrorOnValidationException(errorMessages);
 
 
             }
