@@ -1,6 +1,6 @@
 ﻿namespace TechLibrary.Infrastructure.entities
 {
-    public class User
+    public class UserEntity
     {
 
         public Guid Id { get; set; } = Guid.NewGuid();

@@ -2,14 +2,26 @@
 using TechLibrary.Comunication.Requests;
 using TechLibrary.Comunication.Response;
 using TechLibrary.Exception;
+using TechLibrary.Infrastructure.entities;
+using TechLibrary.Infrastructure.Repositories;
 
 namespace TechLibrary.Application.User.post
 {
     public class RegisterUserUseCase
     {
+        private readonly UserRepository repository;
         public UserRegisterResponseJson execute(UserRequestJson requestJson)
         {
             Validate(requestJson);
+
+            var entity = new UserEntity
+            {
+                Email = requestJson.Email,
+                Name = requestJson.Name,
+                Password = requestJson.Password
+            };
+
+            repository.createUser(entity);
 
             return new UserRegisterResponseJson
             {

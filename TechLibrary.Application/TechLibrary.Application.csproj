@@ -12,7 +12,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TechLibrary.Comunication\TechLibrary.Comunication.csproj" />
+    <ProjectReference Include="..\TechLibrary.Domain\TechLibrary.Domain.csproj" />
     <ProjectReference Include="..\TechLibrary.Exception\TechLibrary.Exception.csproj" />
+    <ProjectReference Include="..\TechLibrary.Infrastructure\TechLibrary.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
