@@ -1,4 +1,4 @@
-﻿namespace TechLibrary.Infrastructure.entities
+﻿namespace TechLibrary.Domain.entities
 {
     public class UserEntity
     {

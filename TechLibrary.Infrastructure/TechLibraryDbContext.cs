@@ -1,6 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
-using TechLibrary.Infrastructure.entities;
+using TechLibrary.Domain.entities;
 
 namespace TechLibrary.Infrastructure
 {

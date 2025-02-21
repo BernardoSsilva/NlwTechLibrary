@@ -16,7 +16,7 @@ namespace TechLibrary.Api.Controllers
         [ProducesResponseType(typeof(UserRegisterResponseJson), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ResponseErrorMessagesJson), StatusCodes.Status400BadRequest)]
 
-        public IActionResult Create(UserRequestJson requestBody)
+        public IActionResult Register(UserRequestJson requestBody)
         {
             try
             {
@@ -36,7 +36,8 @@ namespace TechLibrary.Api.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, new ResponseErrorMessagesJson
                 {
-                    Errors =["Unknown error"]
+                    Errors =
+                    ["Unknown error"]
                 });
             }
         }

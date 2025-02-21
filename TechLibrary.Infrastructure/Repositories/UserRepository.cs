@@ -1,5 +1,5 @@
 ﻿using TechLibrary.Domain.repositories;
-using TechLibrary.Infrastructure.entities;
+using TechLibrary.Domain.entities;
 
 namespace TechLibrary.Infrastructure.Repositories
 {
@@ -12,6 +12,10 @@ namespace TechLibrary.Infrastructure.Repositories
             dbContext.SaveChanges();
         }
 
-      
+        public UserEntity findByEmail(string email)
+        {
+            var user = dbContext.Users.FirstOrDefault(user => user.Email.Equals(email));
+            return user;
+        }
     }
 }
