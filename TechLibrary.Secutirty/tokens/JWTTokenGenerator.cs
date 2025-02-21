@@ -12,7 +12,7 @@ namespace TechLibrary.Secutirty.tokens
         {
             var claims = new List<Claim>()
             {
-                new Claim("sub", user.Id.ToString())
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString())
             };
 
             var tokenDescriptor = new SecurityTokenDescriptor
